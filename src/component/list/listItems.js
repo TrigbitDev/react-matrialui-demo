@@ -1,4 +1,5 @@
 import React from "react";
+import Box from "@material-ui/core/Box";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -12,7 +13,7 @@ import AssignmentIcon from "@material-ui/icons/Assignment";
 import { Link } from "react-router-dom";
 
 export const mainListItems = (
-  <div>
+  <Box>
     <ListItem component={Link} to={"/"}>
       <ListItemIcon>
         <DashboardIcon />
@@ -43,11 +44,11 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="BasicAnimation" />
     </ListItem>
-  </div>
+  </Box>
 );
 
 export const secondaryListItems = (
-  <div>
+  <Box>
     <ListSubheader inset>Saved reports</ListSubheader>
     <ListItem button>
       <ListItemIcon>
@@ -67,5 +68,5 @@ export const secondaryListItems = (
       </ListItemIcon>
       <ListItemText primary="DummyText3" />
     </ListItem>
-  </div>
+  </Box>
 );

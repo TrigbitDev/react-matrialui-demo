@@ -10,35 +10,13 @@ import List from "@material-ui/core/List";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import Badge from "@material-ui/core/Badge";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import { mainListItems, secondaryListItems } from "./listItems";
-import GridExample from "./GridExample";
-import HiddenUp from "./HiddenUp";
-import HiddenDown from "./HiddenDown";
-import BasicComponent from "./BasicComponent";
-import BasicAnimation from "./BasicAnimation";
-import { Router, Route, Switch } from "react-router-dom";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import { mainListItems, secondaryListItems } from "../list/listItems";
+import HomeRoutes from "../../router/HomeRoutes";
+import RightMenu from "../menu/RightMenu";
 
 const drawerWidth = 240;
 
@@ -124,15 +102,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -143,7 +112,7 @@ export default function Dashboard() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
-    <div className={classes.root}>
+    <Box className={classes.root}>
       <CssBaseline />
       <AppBar
         position="absolute"
@@ -171,22 +140,7 @@ export default function Dashboard() {
           >
             Dashboard
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon onClick={handleClick} />
-
-              <Menu
-                style={{ marginTop: 40 }}
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
-              </Menu>
-            </Badge>
-          </IconButton>
+          <RightMenu />
         </Toolbar>
       </AppBar>
 
@@ -197,33 +151,24 @@ export default function Dashboard() {
         }}
         open={open}
       >
-        <div className={classes.toolbarIcon}>
+        <Box className={classes.toolbarIcon}>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
-        </div>
+        </Box>
         <Divider />
         <List>{mainListItems}</List>
         <Divider />
         <List>{secondaryListItems}</List>
       </Drawer>
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
+      <Box className={classes.content}>
+        <Box className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            <Switch>
-              <Route exact path="/" component={GridExample} />
-              <Route path="/hiddenUp" component={HiddenUp} />
-              <Route path="/hiddenDown" component={HiddenDown} />
-              <Route path="/basicComponent" component={BasicComponent} />
-              <Route path="/basicAnimation" component={BasicAnimation} />
-            </Switch>
+            <HomeRoutes />
           </Grid>
-          <Box pt={4}>
-            <Copyright />
-          </Box>
         </Container>
-      </main>
-    </div>
+      </Box>
+    </Box>
   );
 }

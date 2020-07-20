@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Paper, Box } from "@material-ui/core";
+import { Paper, Box } from "@material-ui/core";
+import Tilte from "../Title";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -20,7 +21,7 @@ const ListCard = ({ item: { text } }) => {
   return (
     <Paper className={classes.paper}>
       <Box className={classes.margin}>
-        <Typography>{text}</Typography>
+        <Tilte>{text}</Tilte>
       </Box>
     </Paper>
   );

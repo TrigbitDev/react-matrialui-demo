@@ -1,5 +1,5 @@
 import React from "react";
-import ListCard from "./ListCard";
+import ListCard from "../listCard/ListCard";
 import { useTransition, animated } from "react-spring";
 import { makeStyles } from "@material-ui/core/styles";
 

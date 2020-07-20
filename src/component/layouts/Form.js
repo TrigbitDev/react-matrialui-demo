@@ -1,10 +1,10 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
+import Tilte from "../Title";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +33,7 @@ const Form = ({ value, setValue, handleSubmit }) => {
     <Paper className={classes.paper}>
       <form className={classes.root} onSubmit={handleSubmit}>
         <Box display="flex" flexDirection="column">
-          <Typography className={classes.margin}>Message:</Typography>
+          <Tilte>Message:</Tilte>
           <TextField
             className={classes.margin}
             id="outlined-basic"
