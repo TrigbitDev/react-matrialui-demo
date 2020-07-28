@@ -1,0 +1,77 @@
+p {
+  text-align: center;
+  color: red;
+}
+#para {
+  text-align: center;
+  color: rgb(94, 255, 0);
+}
+.center {
+  text-align: center;
+}
+
+p.center {
+  text-align: center;
+  color: rgb(0, 195, 255);
+}
+
+p[id$="ess"] {
+  color: rgba(0, 140, 255, 0.623);
+}
+
+p[id|="my"] {
+  color: rgba(255, 51, 0, 0.623);
+}
+
+p[id^="L"] {
+  color: rgb(251, 255, 0);
+}
+
+p[title~="beautiful"] {
+  color: rgba(255, 0, 140, 0.966);
+}
+
+p[id*="z"] {
+  color: rgba(174, 0, 255, 0.966);
+}
+
+input[type="text"] {
+  width: 100px;
+}
+input[type="text"]:focus {
+  width: 250px;
+}
+
+p::after {
+  content: " - Remember this";
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+}
+
+input:checked {
+  width: 100px;
+}
+
+p:hover {
+  background-color: yellow;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: black;
+  background: green;
+}
+
+::selection {
+  color: black;
+  background: green;
+}
+
+tr:nth-child(odd) {
+  background: gray;
+}
+
+tr:nth-child(even) {
+  background: white;
+}

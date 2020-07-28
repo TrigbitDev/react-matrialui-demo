@@ -50,23 +50,23 @@ export const mainListItems = (
 export const secondaryListItems = (
   <Box>
     <ListSubheader inset>Saved reports</ListSubheader>
-    <ListItem button>
+    <ListItem component={Link} to={"/selectors"}>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText primary="DummyText1" />
+      <ListItemText primary="CSS Selectors" />
     </ListItem>
-    <ListItem button>
+    <ListItem component={Link} to={"/muiSelector"}>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText primary="DummyText2" />
+      <ListItemText primary="Material Ui Selectors" />
     </ListItem>
-    <ListItem button>
+    <ListItem component={Link} to={"/reverseString"}>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText primary="DummyText3" />
+      <ListItemText primary="ReverseString" />
     </ListItem>
   </Box>
 );

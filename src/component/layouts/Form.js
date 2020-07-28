@@ -38,7 +38,7 @@ const Form = ({ value, setValue, handleSubmit }) => {
             className={classes.margin}
             id="outlined-basic"
             variant="outlined"
-            label="You underestimate my power ..."
+            label="Message you want to write"
             value={value}
             onChange={(e) => setValue(e.currentTarget.value)}
           />
@@ -47,7 +47,7 @@ const Form = ({ value, setValue, handleSubmit }) => {
             variant="contained"
             onClick={(e) => handleSubmit(e)}
           >
-            Try Spinning, that's a good trick!
+            Submit
           </Button>
         </Box>
       </form>
